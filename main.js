@@ -47,16 +47,17 @@ const getUsersWithAge = (users, min, max) => {
 // console.log(getUsersWithAge(users, 30, 40));
 // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
 
-// // Получить общую сумму баланса (поле balance) всех пользователей.
-// const calculateTotalBalance = users => {
-//   // твой код
-// };
+// Получить общую сумму баланса (поле balance) всех пользователей.
+const calculateTotalBalance = users => {
+  // твой код
+  return users.reduce((balance, user) => balance + user.balance, 0);
+};
 
-// console.log(calculateTotalBalance(users)); // 20916
+console.log(calculateTotalBalance(users)); // 20916
 
-// // Массив имен всех пользователей у которых есть друг с указанным именем.
+// Массив имен всех пользователей у которых есть друг с указанным именем.
 // const getUsersWithFriend = (users, friendName) => {
-//   // твой код
+// твой код
 // };
 
 // console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
