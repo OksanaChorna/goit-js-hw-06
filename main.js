@@ -23,7 +23,7 @@ const getUsersWithGender = (users, gender) => {
   return users.filter(user => user.gender === gender).map(user => user.name);
 };
 
-console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+// console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 // Получить массив только неактивных пользователей(поле isActive).
 const getInactiveUsers = users => {
@@ -33,10 +33,11 @@ const getInactiveUsers = users => {
 
 // console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
-// //Получить пользоваля (не массив) по email (поле email, он уникальный).
-// const getUserWithEmail = (users, email) => {
-//   // твой код
-// };
+//Получить пользоваля (не массив) по email (поле email, он уникальный).
+const getUserWithEmail = (users, email) => {
+  // твой код
+  return users.find(user => user.email === email);
+};
 
 // console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
 // console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}
