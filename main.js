@@ -47,17 +47,18 @@ const getUsersWithAge = (users, min, max) => {
 // console.log(getUsersWithAge(users, 30, 40));
 // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
 
-// Получить общую сумму баланса (поле balance) всех пользователей.
 const calculateTotalBalance = users => {
   // твой код
   return users.reduce((balance, user) => balance + user.balance, 0);
 };
 
-console.log(calculateTotalBalance(users)); // 20916
+// console.log(calculateTotalBalance(users)); // 20916
 
 // Массив имен всех пользователей у которых есть друг с указанным именем.
 // const getUsersWithFriend = (users, friendName) => {
 // твой код
+// return users.filter(user => user.friends === friendName);
+// .map(user => user.name);
 // };
 
 // console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
@@ -71,10 +72,21 @@ console.log(calculateTotalBalance(users)); // 20916
 // console.log(getNamesSortedByFriendsCount(users));
 // // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
-// // Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
-// const getSortedUniqueSkills = users => {
-//   // твой код
-// };
+// Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
+const getSortedUniqueSkills = users => {
+  // твой код
+  return users
+    .reduce((allSkills, user) => {
+      allSkills.push(...user.skills);
 
-// console.log(getSortedUniqueSkills(users));
-// // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+      return allSkills;
+    }, [])
+    .sort();
+
+  // console.log(skills);
+
+  // return skills;
+};
+
+console.log(getSortedUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
