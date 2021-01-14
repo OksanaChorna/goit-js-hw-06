@@ -72,20 +72,18 @@ const calculateTotalBalance = users => {
 // console.log(getNamesSortedByFriendsCount(users));
 // // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
-// Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
 const getSortedUniqueSkills = users => {
   // твой код
   return users
     .reduce((allSkills, user) => {
-      allSkills.push(...user.skills);
-
+      user.skills.forEach(skill => {
+        if (!allSkills.includes(skill)) {
+          allSkills.push(skill);
+        }
+      });
       return allSkills;
     }, [])
     .sort();
-
-  // console.log(skills);
-
-  // return skills;
 };
 
 console.log(getSortedUniqueSkills(users));
